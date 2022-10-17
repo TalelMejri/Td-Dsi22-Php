@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <title>Td</title>
     <style>
@@ -13,6 +13,7 @@
 <body>
     <h4 class="text-center py-5 "> 🎉✔ Talel Mejri Dsi22 🎉✔</h4>
     <div class="container py-3">
+         <h4>Tp 1</h4>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
@@ -186,9 +187,213 @@
               </div>
             </div>
         </div>
+        <h4>Trvail a rendre :</h4>
+        <div class="row">
+            <div class="col-md-4">
+                 <div class="card">
+                     <div class="card-header">
+                          exercice 1:
+                    </div>
+                    <div class="card-body">
+                        <?php 
+                            echo '$d : True'."<br>";
+                            echo '$e : False'."<br>";
+                            echo '$f : True '."<br>";
+                           
+                            ?>
+                   </div>
+                 </div>
+            </div>
+            <div class="col-md-4">
+            <div class="card">
+                     <div class="card-header">
+                          exercice 2:
+                    </div>
+                    <div class="card-body">
+                        <?php
+                           echo '$x,$y,$z a le méme valeur `PHP5`';
+                        ?>
+                   </div>
+                 </div>
+            </div>
+            <div class="col-md-4">
+            <div class="card">
+                     <div class="card-header">
+                          exercice 3:
+                    </div>
+                    <div class="card-body">
+                            <?php 
+                                for($i=6;$i<=100;$i++){
+                                    if($i%3==0 && $i%5==0){
+                                        echo "$i"."|";
+                                     }
+                                }
+                            ?>
+                   </div>
+                 </div>
+            </div>
+        </div>
+        <div class="row py-4">
+            <div class="col-md-4">
+                <div class="card">
+                     <div class="card-header">
+                          exercice 4:
+                    </div>
+                    <div class="card-body">
+                            <?php 
+                                function factoriel(int $a):int{
+                                    $fact=1;
+                                    for($i=2;$i<=$a;$i++){
+                                        $fact*=$i;
+                                    }
+                                    return $fact;
+                                }
+                                echo "
+                                    <form action='index.php' method='POST'>
+                                        <input type='number' name='fact' class='mb-2 form-control' placeholder='donner un entier'>
+                                        <button class='btn btn-outline-success py-2' name='btn'>Calculer facturiel</button>
+                                    </form>
+                                ";
+                                if(isset($_POST['btn'])){
+                                   echo "<h4 class='text-center mt-2'>". $_POST['fact'] ."!=".factoriel((int)$_POST['fact']) ."</h4>";
+                                }
+
+                            ?>
+                   </div>
+                 
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                     <div class="card-header">
+                          exercice 5:
+                    </div>
+                    <div class="card-body">
+                            <?php 
+                                echo "<table>";
+                                 for($i=0;$i<=10;$i++){
+                                    echo "<tr><td> $i * 13 = ".(int)13*$i."</td></tr>";
+                                 }
+                                
+                                echo "</table>";
+                            ?>
+                   </div>
+                 
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                     <div class="card-header">
+                          exercice 6:
+                    </div>
+                    <div class="card-body">
+                            <?php 
+                            echo "<table class='table table-bordered'>";
+                            echo "<td>*</td>";
+                             for($i=0;$i<=10;$i++){
+                                echo "<td>$i</td>";
+                             }
+                             for($i=0;$i<=10;$i++){
+                                echo "<tr>";
+                                echo "<td>$i</td>";
+                                for($j=0;$j<=10;$j++){
+                                    echo "<td>".$i*$j."</td>";
+                                }
+                             }
+                            echo "</table>";
+                            ?>
+                   </div>
+                 
+                </div>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Exercice 7
+                    </div>
+                    <div class="card-body">
+                        <?php
+                           $tab[1]=rand(10,100);
+                           while(count($tab)<50){
+                                $a=rand(10,100);
+                                if(!in_array($a,$tab)){
+                                    array_push($tab,$a);
+                                }
+                           } 
+                           $max=$tab[1];
+                           $min=$tab[1];
+                           for($i=1;$i<=count($tab);$i++){
+                                if($max<$tab[$i]){
+                                  $max=$tab[$i];
+                                }
+                                if($min>$tab[$i]){
+                                  $min=$tab[$i];
+                                }
+                           };
+                           echo "<table  class='table table-bordered'>";
+                            for($i=1;$i<=count($tab);$i++){
+                               if($tab[$i]==$max){
+                                    echo "<td style='background-color:red'>$tab[$i]</td>";
+                                }else if($tab[$i]==$min){
+                                    echo "<td style='background-color:green'>$tab[$i]</td>";
+                                  
+                                }else{
+                                    echo '<td>'.$tab[$i].'</td>';
+                                }
+                             
+                                ($i%25==0) ? print ('<tr></tr>') : '';
+                            }
+                           echo '</table>';
+                           echo "<h5 class='text-center'>la maximum de tableau est : $max la minimum est :  $min </h5>";
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3">
+                <div class="card">
+                    <div class="card-header">
+                        Exercice 8
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3">
+                <div class="card">
+                    <div class="card-header">
+                         Exercice 9
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3">
+                <div class="card">
+                    <div class="card-header">
+                         Exercice 10
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3">
+                <div class="card">
+                    <div class="card-header">
+                         Exercice 11
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-
-
 
 
     <div class="footer pt-5 mt-5 pb-5 text-center bg-secondary">
