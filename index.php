@@ -40,8 +40,8 @@
                             <?php   
                             function tirage(){
                                     do{
-                                        $a=rand(0,500);
-                                        $b=rand(0,500);
+                                        $a=rand(10,100);
+                                        $b=rand(10,100);
                                         //echo "$a | $b <br>";
                                       }while(($a%2==0) || ( $b%2!=0));
                                     echo $a .",". $b;
