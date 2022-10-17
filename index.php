@@ -126,17 +126,17 @@
 
                                     echo "<table class='table'>";
                                     foreach($amis as $key=>$ami){
-                                        echo '<tr class="monami text-center text-white fw-bolder" id="'.$ami.'"><td> '.$key.' <td><tr>';
+                                        echo '<tr class="monami text-center text-white fw-bolder" style="background-color:'.$ami.'"><td>'.$key.'<td><tr>';
                                     }
                                     echo "</table>";
-                                    echo "
+                                    /*echo "
                                     <script>
                                         all_monami=document.querySelectorAll('.monami');
                                         all_monami.forEach(monami=>{
                                             monami.style.backgroundColor=monami.id;
                                         })
                                     </script>
-                                    ";
+                                    ";*/
                                  ?>
                      </div>
               </div>
